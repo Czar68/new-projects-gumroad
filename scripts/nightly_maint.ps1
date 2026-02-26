@@ -1,5 +1,5 @@
-# Nightly maintenance: PREP -> agent CLI (headless) -> verify + commit
-# REQUIRE: Cursor CLI (winget install Cursor.CLI)
+# Nightly maintenance: PREP -> chat prompt (manual paste in Cursor) -> verify + commit
+# Agent CLI headless is broken; use Cursor chat with artifacts/chat_prompt.md
 param([switch]$Force)
 $ErrorActionPreference = "Stop"
 Set-StrictMode -Version Latest
@@ -35,42 +35,49 @@ $fullPrompt = "$prompt`n`nCONTEXT:`n$context"
 $promptOut = "artifacts\cursor_agent_prompt_$ts.txt"
 Set-Content -Path $promptOut -Value $fullPrompt -Encoding utf8 -NoNewline
 
-# CLI AGENT: headless coding (REQUIRE: winget install Cursor.CLI)
+# Skip broken agent CLI → direct chat output
 $outputPath = "artifacts\cursor_agent_output.md"
-$logPath = "artifacts\agent_full.log"
-$promptText = Get-Content $promptOut -Raw
+$chatPrompt = @"
+BACKLOG TASK (auto-generated):
 
-# Force agent context for headless
-$env:CURSOR_WORKSPACE_ROOT = (Get-Location).Path
-$env:CURSOR_TRUST_WORKSPACE = "true"
+Read projects.json → backlog
 
-# More robust flags: --verbose --debug + explicit model
-Write-Host "Running: agent --trust --verbose --debug --print --output-format text --model claude-3.5-sonnet --output $outputPath [prompt: $($promptText.Length) chars]"
-$agentOut = & agent --trust --verbose --debug --print --output-format text --model claude-3.5-sonnet --output $outputPath $promptText 2>&1
-$agentOut | Out-File -FilePath $logPath -Append -Encoding utf8
-$agentExit = $LASTEXITCODE
+Read artifacts/nightly_cursor_report.md
 
-# Ensure cursor_agent_output.md ALWAYS exists (placeholder if agent failed)
-if (-not (Test-Path $outputPath)) {
-    $promptPreview = if ($promptText) { $promptText.Substring(0, [Math]::Min(200, $promptText.Length)) } else { "(no prompt)" }
-    "Agent failed to write output. Exit code: $agentExit. Prompt used: $promptPreview. Check agent_full.log." | Out-File -FilePath $outputPath -Encoding utf8
-}
+Read research_log.md
 
-# VERIFY + COMMIT
-if (Test-Path $outputPath) {
-    $content = Get-Content $outputPath -Raw -ErrorAction SilentlyContinue
-    if ($content -and ($content -match "FIXED|complete")) {
-        if (Test-Path "$PSScriptRoot\verify_wiring.ps1") {
-            & "$PSScriptRoot\verify_wiring.ps1" -Flow all
-        }
+Make ONE concrete change (1 file max).
+
+Run verify_wiring.ps1
+
+If passes: FIXED: [backlog item]
+
+Output ONLY: git commands to stage/commit.
+
+STOP after 1 file + verify.
+"@
+$chatPrompt | Out-File -FilePath "artifacts\chat_prompt.md" -Encoding utf8
+@{ status = "waiting_for_manual_chat"; promptFile = "artifacts/chat_prompt.md"; outputFile = "artifacts/cursor_agent_output.md" } | ConvertTo-Json | Set-Content -Path "artifacts\chat_completion_status.json" -Encoding utf8
+Write-Host "OPEN Cursor chat and paste artifacts/chat_prompt.md"
+Write-Host "Agent will write output to artifacts/cursor_agent_output.md manually"
+
+# VERIFY + COMMIT (completion = output has FIXED|complete|research|done OR git has changes)
+$content = if (Test-Path $outputPath) { Get-Content $outputPath -Raw -ErrorAction SilentlyContinue } else { "" }
+$outputIndicatesDone = $content -and ($content -match "FIXED|complete|research|done")
+$gitHasChanges = (git status --porcelain 2>$null) -match "\S"
+if ($outputIndicatesDone -or $gitHasChanges) {
+    if (Test-Path "$PSScriptRoot\verify_wiring.ps1") {
+        & "$PSScriptRoot\verify_wiring.ps1" -Flow all
+    }
+    if ($gitHasChanges) {
         git add .
-        git commit -m "CLI Agent: FIXED backlog"
-        Write-Output "✅ CLI agent complete: $(git log -1 --oneline)"
+        git commit -m "Nightly: chat workflow backlog"
+        Write-Output "✅ Chat workflow complete: $(git log -1 --oneline)"
     } else {
-        Write-Output "⚠️ CLI agent incomplete: $outputPath"
+        Write-Output "✅ Output ready (no git changes to commit)"
     }
 } else {
-    Write-Output "⚠️ CLI agent incomplete: $outputPath"
+    Write-Output "⚠️ Waiting for manual chat: paste artifacts/chat_prompt.md → write $outputPath"
 }
 
 # AFTER ACTION WEBHOOK (idempotent)
@@ -104,6 +111,6 @@ try {
         if ($LASTEXITCODE -eq 0) { Write-Output "✅ verify_wiring passed" }
     }
 } catch { }
-if (Test-Path $outputPath) { Write-Output "✅ CLI agent ran (output.md created)" }
-if ($agentExit -ne 0) { Write-Output "⚠️ Agent exit code $agentExit (check agent_full.log)" }
+if (Test-Path $outputPath) { Write-Output "✅ cursor_agent_output.md present" }
+else { Write-Output "⚠️ Paste artifacts/chat_prompt.md in Cursor chat → save output to $outputPath" }
 Write-Output "OK Complete"

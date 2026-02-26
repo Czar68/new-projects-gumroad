@@ -1,0 +1,5 @@
+{
+  "outputFile": "artifacts/cursor_agent_output.md",
+  "status": "waiting_for_manual_chat",
+  "promptFile": "artifacts/chat_prompt.md"
+}
