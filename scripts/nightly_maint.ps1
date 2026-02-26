@@ -39,7 +39,14 @@ Set-Content -Path $promptOut -Value $fullPrompt -Encoding utf8 -NoNewline
 $outputPath = "artifacts\cursor_agent_output.md"
 $logPath = "artifacts\agent_full.log"
 $promptText = Get-Content $promptOut -Raw
-$agentOut = & agent --trust --print --output-format text --model auto --output $outputPath $promptText 2>&1
+
+# Force agent context for headless
+$env:CURSOR_WORKSPACE_ROOT = (Get-Location).Path
+$env:CURSOR_TRUST_WORKSPACE = "true"
+
+# More robust flags: --verbose --debug + explicit model
+Write-Host "Running: agent --trust --verbose --debug --print --output-format text --model claude-3.5-sonnet --output $outputPath [prompt: $($promptText.Length) chars]"
+$agentOut = & agent --trust --verbose --debug --print --output-format text --model claude-3.5-sonnet --output $outputPath $promptText 2>&1
 $agentOut | Out-File -FilePath $logPath -Append -Encoding utf8
 $agentExit = $LASTEXITCODE
 
