@@ -1,0 +1,77 @@
+﻿# Nightly improvement — RESEARCH + IMPLEMENT
+
+## RESEARCH PHASE (30min max)
+
+**READ:**
+- master_auto `projects.json` → this project's `backlog` array
+- `artifacts/nightly_cursor_report.md`
+- `docs/backlogs/new-projects.md` (or project backlog doc)
+
+**SEARCH:**
+- Web: "[project-name] [backlog topic] best practices 2026"
+- Web: "[project-name] EV optimization"
+
+**PRIORITIZE:**
+- PrizePicks/Underdog/SGO patterns, math improvements (EV+3%), reliability (+10% uptime)
+
+**VERDICT REQUIRED:**
+
+- **IMPROVEMENT:** Write `docs/improvements/[YYYYMMDD]-[topic].md` (code diff + EV math proof)  
+  - `git add docs/improvements/[file]`  
+  - `git commit -m "Auto-enqueue: [project] [backlog] +[X]% EV|reliability"`
+- **FIXED:** Shift backlog (remove completed item, re-append to end).
+- **NO WIN:** Write `artifacts/research_log.md`: `NoAction: [backlog] no verifiable metric gain`
+
+---
+
+## IMPLEMENT PHASE
+
+**Top priority:**
+- If `docs/improvements/*.md` exists: cherry-pick HIGHEST EV/impact first.
+- Else: work from backlog in `projects.json`.
+
+**Flow:** Code → Test → `verify_wiring.ps1` → artifacts match contract.
+
+**FIXED:** Mark in `nightly_cursor_report.md`, git commit, shift backlog array.
+
+---
+
+## OUTPUT FILES (per run)
+
+- `docs/improvements/[YYYYMMDD]-[topic].md` (when improvement enqueued)
+- `artifacts/research_log.md` (when no win)
+- `artifacts/nightly_cursor_report.md` (FIXED entries)
+
+
+CONTEXT:
+# DAILY REPORT 2026-02-27
+
+**FIXED totals:** 7 (from dashboard)
+**DFS cards:** prizepicks-cards.csv: 500 rows, top EV 36.38%
+**Quota:** SGO Set SGO_KEY for quota
+**Git:** 25 commits yesterday
+
+---
+## Next priorities (top 3)
+
+- [dfs-optimizer] card math audit
+- [dfs-optimizer] Phase 4 perf→Kelly→Telegram
+- [dfs-optimizer] historical backfill
+
+### [dfs-optimizer backlog]
+- card math audit
+- Phase 4 perf→Kelly→Telegram
+- historical backfill
+
+### Highest priority cross-project
+- [dfs-optimizer] card math audit
+- [sportsbook-optimizer] SGO/TheRundown import → 80+ books EV sync
+- [ebay-scanner] Terapeak daily pricing (competitor scan)
+- [disc-only-scanner] Vision OCR confidence gating (90%+ auto)
+- [new-projects] Research: eBay→Amazon media arb bot
+
+---
+Paste this entire file into Perplexity â†’ get next Cursor prompt.
+
+Research run at 2026-02-24 17:18. Follow docs/prompts/research_rules.md and docs/prompts/nightly_improvement.md RESEARCH PHASE.
+Research run at 2026-02-24 17:24. Follow docs/prompts/research_rules.md and docs/prompts/nightly_improvement.md RESEARCH PHASE.

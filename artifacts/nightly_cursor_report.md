@@ -2,8 +2,8 @@
 
 **FIXED totals:** 7 (from dashboard)
 **DFS cards:** prizepicks-cards.csv: 500 rows, top EV 36.38%
-**Quota:** SGO SGO quota fetch failed
-**Git:** 19 commits yesterday
+**Quota:** SGO Set SGO_KEY for quota
+**Git:** 25 commits yesterday
 
 ---
 ## Next priorities (top 3)
