@@ -1,9 +1,9 @@
-# DAILY REPORT 2026-02-26
+﻿# DAILY REPORT 2026-02-27
 
 **FIXED totals:** 7 (from dashboard)
-**DFS cards:** prizepicks-cards.csv: 500 rows, top EV 43.05%
+**DFS cards:** prizepicks-cards.csv: 500 rows, top EV 36.38%
 **Quota:** SGO SGO quota fetch failed
-**Git:** 14 commits yesterday
+**Git:** 19 commits yesterday
 
 ---
 ## Next priorities (top 3)
@@ -25,4 +25,4 @@
 - [new-projects] Research: eBay→Amazon media arb bot
 
 ---
-Paste this entire file into Perplexity → get next Cursor prompt.
+Paste this entire file into Perplexity â†’ get next Cursor prompt.
