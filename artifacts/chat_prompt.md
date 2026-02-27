@@ -1,6 +1,6 @@
-﻿BACKLOG TASK (auto-generated):
+BACKLOG TASK (auto-generated):
 
-Read projects.json â†’ backlog
+Read projects.json → backlog
 
 Read artifacts/nightly_cursor_report.md
 
