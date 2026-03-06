@@ -1,0 +1,9 @@
+# Scope for Cursor automation in this repo
+# Roles: maintainer (tests/lint/docs), optimizer (small safe improvements), reporter (handoffs)
+# Model: Auto/default only. Same cron pattern as other repos (morning/afternoon/evening/nightly UTC).
+name: "New-Projects Automation"
+trigger:
+  cron: "0 3 * * 2-6"
+prompt: |
+  Run nightly: npm run nightly (or scripts/nightly_maint.ps1). Scope: Spreadsheet designs — Gumroad packaging, template validation, docs/examples, export formats. Safe: lint, types, docs. FAIL SAFE if no entry script (scripts/entry.ps1 or scripts/nightly_maint.ps1) or no tests (tests/ folder or tests/smoke.test.js). PR all changes. Handoff format: ## Goal ## Changes ## Failures ## Human Review ## Next 3 Tasks. Use .cursor/handoff.md template.
+  FAIL SAFE if: scripts/ entry points missing, tests/ missing and no tests/smoke.test.js, broken imports in core pipeline files, or .env.example (or config/.env.example) not documenting required env vars.
