@@ -1,0 +1,16 @@
+{
+  "name": "new-projects",
+  "version": "1.0.0",
+  "description": "Master_auto orchestration + selective runs. Placeholder for research and template_sync.",
+  "private": true,
+  "scripts": {
+    "dry": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/dry_run.ps1",
+    "verify": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/run_selective.ps1 -Mode status",
+    "nightly": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/nightly_maint.ps1 -Force -NoPause",
+    "status": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/run_selective.ps1 -Mode status",
+    "test": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/dry_run.ps1"
+  },
+  "keywords": ["master_auto", "automation", "template"],
+  "author": "",
+  "license": "UNLICENSED"
+}
