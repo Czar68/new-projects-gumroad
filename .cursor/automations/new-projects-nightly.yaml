@@ -1,0 +1,11 @@
+# Cursor Automation: New-Projects Nightly Agent
+name: "New-Projects Nightly Agent"
+trigger:
+  cron: "0 22 * * 1-5"
+steps:
+  - run: npm run nightly
+  - if: "{{ $exitCode == 0 }}"
+    then:
+      - run: git add .
+      - run: git commit -m "Nightly: new-projects FIXED" || true
+      - run: gh pr create --title "Nightly new-projects" --body "Auto nightly run" || true
