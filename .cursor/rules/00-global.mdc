@@ -1,0 +1,10 @@
+---
+alwaysApply: true
+description: Proof-based completion, scripts-as-truth, artifacts
+---
+
+# Global Rules
+
+- Don't claim "functional" or "wired" without running verify_wiring.ps1 and it passing.
+- Execution happens via scripts/*.ps1; update scripts instead of inventing commands.
+- All flows write artifacts/last_run.json and a human report.

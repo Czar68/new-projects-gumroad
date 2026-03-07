@@ -1,0 +1,18 @@
+---
+alwaysApply: true
+description: Fill-in: mission, key flows, how to run
+---
+
+# Project Overview (FILL THIS IN)
+
+Mission:
+Reusable baseline automation for new repos: cursor rules, scripts (nightly, main, verify, register_master), and master_auto registration.
+
+Primary flow:
+Run scripts/run_main.ps1 (DryRun or full); scripts/verify_wiring.ps1 asserts artifacts/last_run.json.
+
+Entry scripts:
+scripts/run_main.ps1, scripts/verify_wiring.ps1, scripts/nightly_maint.ps1, scripts/register_master.ps1
+
+Key artifacts:
+artifacts/last_run.json, artifacts/nightly_report_*.md

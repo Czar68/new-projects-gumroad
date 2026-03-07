@@ -1,0 +1,8 @@
+# Weekly Gumroad idea / loop automation
+# Trigger: weekly (e.g. Sunday night). Runs audit + optional next-idea refresh.
+name: gumroad-idea
+description: Audit current project and ensure next-project spec + data exist (Gumroad loop).
+schedule: "0 22 * * 0"
+command: npm run loop
+# Alternative: command: powershell -File ./scripts/gumroad_loop.ps1
+# To only refresh next idea: npm run loop:next

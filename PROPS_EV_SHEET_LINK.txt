@@ -1,0 +1,12 @@
+PROPS EV BLUEPRINT — MAKE YOUR COPY
+
+1. Open this link in your browser (log into Google if needed):
+   https://docs.google.com/spreadsheets/d/1Dd6JwZBdQq6x80dXZOYuGEBPNtYPVXAhvkDznQYWpvQ/edit?usp=sharing
+
+2. In Google Sheets: File → Make a copy
+
+3. Name your copy (e.g. "My Props EV Blueprint") and save to your Drive.
+
+4. Use your copy for all props — enter Your Fair % (e.g. 53 for 53%), change Bankroll in B1, add rows as needed. Edge% is calculated for you.
+
+You own your copy. The MASTER template stays unchanged.

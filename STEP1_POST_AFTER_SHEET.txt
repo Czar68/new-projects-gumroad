@@ -1,0 +1,19 @@
+STEP 1 COMPLETE — POST THIS
+
+After you build the sheet in Google Sheets using SHEET_SPEC_Props_EV_Blueprint.md and sample_props_data.csv:
+
+1. Set sharing: File → Share → Anyone with the link → Viewer. Copy link.
+
+2. Take a screenshot of the EV Calculator tab showing:
+   - Row 3: Zion | AST | PP | 4.5 | 110 | 5
+   - Implied Prob, EV%, Kelly Units, Recommendation visible
+   - EV% cell green (conditional format), Recommendation = "2u BET"
+
+3. POST (reply here or in your doc):
+   ---
+   STEP 1 DONE — Google Sheet core built.
+   • Public template link (Make a copy): [PASTE LINK]
+   • Screenshot: [ATTACH — Zion AST calc with 2u BET]
+   ---
+
+Then proceed to Step 2 (PDF Playbook).
