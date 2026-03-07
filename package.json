@@ -4,12 +4,12 @@
   "description": "Props EV Blueprint + E-commerce Profit sheet pipeline; Gumroad loop.",
   "private": true,
   "scripts": {
-    "dry": "echo 'Dry run: smoke test + loop check' && powershell -NoProfile -File ./tests/final_smoke_test.ps1",
-    "test": "powershell -NoProfile -File ./tests/final_smoke_test.ps1",
-    "smoke": "powershell -NoProfile -File ./tests/final_smoke_test.ps1",
-    "loop": "powershell -NoProfile -File ./scripts/gumroad_loop.ps1",
-    "loop:audit": "powershell -NoProfile -File ./scripts/gumroad_loop.ps1 -AuditOnly",
-    "loop:next": "powershell -NoProfile -File ./scripts/gumroad_loop.ps1 -GenerateNextOnly"
+    "dry": "powershell -NoProfile -ExecutionPolicy Bypass -File ./tests/final_smoke_test.ps1",
+    "test": "powershell -NoProfile -ExecutionPolicy Bypass -File ./tests/final_smoke_test.ps1",
+    "smoke": "powershell -NoProfile -ExecutionPolicy Bypass -File ./tests/final_smoke_test.ps1",
+    "loop": "powershell -NoProfile -ExecutionPolicy Bypass -File ./scripts/gumroad_loop.ps1",
+    "loop:audit": "powershell -NoProfile -ExecutionPolicy Bypass -File ./scripts/gumroad_loop.ps1 -AuditOnly",
+    "loop:next": "powershell -NoProfile -ExecutionPolicy Bypass -File ./scripts/gumroad_loop.ps1 -GenerateNextOnly"
   },
   "keywords": ["gumroad", "spreadsheet", "automation"],
   "author": "",
