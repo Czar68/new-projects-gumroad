@@ -4,6 +4,7 @@
   "description": "Props EV Blueprint + E-commerce Profit sheet pipeline; Gumroad loop.",
   "private": true,
   "scripts": {
+    "agent": "powershell -NoProfile -ExecutionPolicy Bypass -File ./scripts/gumroad_loop.ps1",
     "dry": "powershell -NoProfile -ExecutionPolicy Bypass -File ./tests/final_smoke_test.ps1",
     "test": "powershell -NoProfile -ExecutionPolicy Bypass -File ./tests/final_smoke_test.ps1",
     "smoke": "powershell -NoProfile -ExecutionPolicy Bypass -File ./tests/final_smoke_test.ps1",

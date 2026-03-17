@@ -1,0 +1,19 @@
+node_modules/
+dist/
+.cache/
+.cursor/
+
+# Secrets
+.env
+.env.local
+credentials.json
+token.json
+
+# Artifacts / local files
+artifacts/
+screenshots/
+data/
+*.log
+
+# OS
+.DS_Store

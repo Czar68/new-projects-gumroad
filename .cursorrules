@@ -1,0 +1,10 @@
+# CORE BEHAVIOR
+- NEVER assume or guess. If requirements are unclear, ask for clarification.
+- NEVER suggest or include video links.
+- Pull actual data, do not use placeholder data unless explicitly instructed to mock.
+
+# ARCHITECTURE & STANDARDS
+1. PATH MANAGEMENT: No hardcoded file paths. All paths must be centralized in `src/constants/paths.ts` or `scripts/_paths.ps1`.
+2. FAIL-FAST: All scripts must validate prerequisites before running. Throw CRITICAL errors if validation fails.
+3. ENVIRONMENT ISOLATION: Wrap executions in try/finally blocks. Always clear temporary environment variables in the finally block.
+4. DATA INTEGRITY: Use 36-column structure for database/spreadsheet outputs (ISBN, Catalog #, Status included).
