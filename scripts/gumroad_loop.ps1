@@ -1,6 +1,11 @@
-# Gumroad loop: audit current -> test -> package -> (optional) generate next
+﻿# Gumroad loop: audit current -> test -> package -> (optional) generate next
 # Run from repo root: .\scripts\gumroad_loop.ps1 [-AuditOnly] [-GenerateNextOnly]
-param([switch]$AuditOnly, [switch]$GenerateNextOnly)
+
+param(
+    [switch]$AuditOnly,
+    [switch]$GenerateNextOnly
+)
+
 $ErrorActionPreference = "Stop"
 Set-StrictMode -Version Latest
 
@@ -25,16 +30,29 @@ function Get-AuditSummary {
     $ok = 0
     $missing = @()
     foreach ($c in $checks) {
-        if (Test-Path $c.Path) { $ok++ } else { $missing += $c.Name }
+        if (Test-Path $c.Path) {
+            $ok++
+        } else {
+            $missing += $c.Name
+        }
     }
-    return @{ Project = $current; Pass = $ok; Total = $checks.Count; Missing = $missing }
+    return @{
+        Project = $current
+        Pass    = $ok
+        Total   = $checks.Count
+        Missing = $missing
+    }
 }
 
 function Write-DailyReport {
-    param($Audit, [bool]$SmokePass)
+    param(
+        $Audit,
+        [bool]$SmokePass
+    )
+
     $date = Get-Date -Format "yyyy-MM-dd HH:mm"
     $content = @"
-# Daily report — Gumroad loop
+# Daily report - Gumroad loop
 **Generated:** $date
 
 ## Current project
@@ -52,22 +70,35 @@ function Write-DailyReport {
 - PDF playbook exported: manual
 - Gumroad product live + test purchase: manual
 - See docs/AUDIT_CURRENT_STATE.md for full checklist.
-
 "@
+
     $content | Out-File -FilePath $reportPath -Encoding utf8
     Write-Host "Report: $reportPath"
 }
 
-# --- Main ---
+#a Main
 $audit = Get-AuditSummary
-Write-Host "Audit: $($audit.Project) — $($audit.Pass)/$($audit.Total)"
-if ($audit.Missing.Count -gt 0) { Write-Host "Missing: $($audit.Missing -join ', ')" }
+Write-Host "Audit: $($audit.Project) - $($audit.Pass)/$($audit.Total)"
+if ($audit.Missing.Count -gt 0) {
+    Write-Host "Missing: $($audit.Missing -join ', ')"
+}
 
 if ($GenerateNextOnly) {
-    $nextChecks = @("docs\NEXT_PROJECT_SPEC.md", "data\example_data.csv", "tests\golden_output.csv", "tests\golden_output_spec.md")
+    $nextChecks = @(
+        "docs\NEXT_PROJECT_SPEC.md",
+        "data\example_data.csv",
+        "tests\golden_output.csv",
+        "tests\golden_output_spec.md"
+    )
+
     foreach ($f in $nextChecks) {
-        if (Test-Path $f) { Write-Host "OK: $f" } else { Write-Host "MISSING: $f" }
+        if (Test-Path $f) {
+            Write-Host "OK: $f"
+        } else {
+            Write-Host "MISSING: $f"
+        }
     }
+
     Write-Host "Generate-next check done."
     exit 0
 }
@@ -78,7 +109,6 @@ if ($AuditOnly) {
 }
 
 # Run smoke test
-$smokeResult = 0
 & "$root\tests\final_smoke_test.ps1" 2>&1 | ForEach-Object { Write-Host $_ }
 $smokeResult = $LASTEXITCODE
 

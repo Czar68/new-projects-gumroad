@@ -1,10 +1,10 @@
-# Daily report — Gumroad loop
-**Generated:** 2026-03-05 16:26
+﻿# Daily report - Gumroad loop
+**Generated:** 2026-03-18 12:46
 
 ## Current project
 - **Name:** Props EV Blueprint v1.1
 - **Audit:** 8/8 items present
-- **Smoke test:** PASS
+- **Smoke test:** FAIL
 - **Missing:** 
 
 ## Next project
@@ -16,4 +16,3 @@
 - PDF playbook exported: manual
 - Gumroad product live + test purchase: manual
 - See docs/AUDIT_CURRENT_STATE.md for full checklist.
-
