@@ -1,0 +1,3 @@
+﻿Project: New Projects Gumroad
+Tech Stack: To be determined
+Purpose: Gumroad product management
