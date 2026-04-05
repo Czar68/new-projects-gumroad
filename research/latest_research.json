@@ -1,0 +1,104 @@
+﻿{
+    "templates": [
+        {
+            "name": "AI Content Generator Template",
+            "price": 49.99,
+            "monthlySales": 200,
+            "features": ["Pre-built AI prompt libraries", "Customizable workflows for various niches", "Integration with popular platforms like Notion", "Automated content scheduling"],
+            "audience": "Content creators, marketers, entrepreneurs",
+            "difficulty": "medium",
+            "buildHours": 20,
+            "saturation": "medium"
+        },
+        {
+            "name": "Minimalist Digital Planner",
+            "price": 24.99,
+            "monthlySales": 150,
+            "features": ["Hyperlinked tabs for easy navigation", "Dark and light mode options", "Editable PDF with form fields", "Yearly and monthly calendar views"],
+            "audience": "Students, professionals, productivity enthusiasts",
+            "difficulty": "easy",
+            "buildHours": 10,
+            "saturation": "high"
+        },
+        {
+            "name": "E-commerce Store Starter Kit",
+            "price": 79.99,
+            "monthlySales": 120,
+            "features": ["Pre-designed product pages and checkout flows", "Mobile-responsive layouts", "SEO-optimized structure", "Integration with payment gateways"],
+            "audience": "Small business owners, online sellers, startups",
+            "difficulty": "hard",
+            "buildHours": 40,
+            "saturation": "medium"
+        },
+        {
+            "name": "Social Media Content Calendar Template",
+            "price": 19.99,
+            "monthlySales": 300,
+            "features": ["Drag-and-drop scheduling for multiple platforms", "Content idea banks and hashtag suggestions", "Analytics tracking sections", "Collaborative editing capabilities"],
+            "audience": "Social media managers, influencers, agencies",
+            "difficulty": "medium",
+            "buildHours": 15,
+            "saturation": "high"
+        },
+        {
+            "name": "Online Course Launch Template",
+            "price": 59.99,
+            "monthlySales": 90,
+            "features": ["Modular lesson structures with quizzes", "Email marketing sequences for promotion", "Student progress trackers", "Customizable certificates and badges"],
+            "audience": "Educators, coaches, knowledge entrepreneurs",
+            "difficulty": "medium",
+            "buildHours": 25,
+            "saturation": "medium"
+        },
+        {
+            "name": "Website Landing Page Template",
+            "price": 69.99,
+            "monthlySales": 110,
+            "features": ["High-conversion design with A/B testing elements", "Fast loading speeds and performance optimized", "Built-in lead capture forms", "Compatibility with popular CMS like Webflow"],
+            "audience": "Web developers, digital marketers, freelancers",
+            "difficulty": "hard",
+            "buildHours": 30,
+            "saturation": "high"
+        },
+        {
+            "name": "Video YouTube Intro Template",
+            "price": 29.99,
+            "monthlySales": 180,
+            "features": ["Customizable text and logo animations", "Royalty-free music and sound effects", "Multiple duration options (5s, 10s, 15s)", "Easy editing in Premiere Pro or After Effects"],
+            "audience": "YouTubers, videographers, content creators",
+            "difficulty": "medium",
+            "buildHours": 12,
+            "saturation": "high"
+        },
+        {
+            "name": "3D Character Model Template",
+            "price": 89.99,
+            "monthlySales": 70,
+            "features": ["Rigged and ready for animation", "Multiple texture and pose variations", "Compatible with Blender and Unity", "Low-poly and high-poly versions included"],
+            "audience": "Game developers, animators, VR/AR creators",
+            "difficulty": "hard",
+            "buildHours": 50,
+            "saturation": "low"
+        },
+        {
+            "name": "Customizable Logo Pack",
+            "price": 34.99,
+            "monthlySales": 250,
+            "features": ["Vector files (SVG, AI, EPS) for scalability", "Multiple design styles (minimalist, vintage, modern)", "Color palette suggestions and editable elements", "Commercial use license included"],
+            "audience": "Startups, designers, small businesses",
+            "difficulty": "easy",
+            "buildHours": 8,
+            "saturation": "high"
+        },
+        {
+            "name": "Fitness Tracker Template",
+            "price": 39.99,
+            "monthlySales": 140,
+            "features": ["Workout log with progress charts", "Meal planning and nutrition tracking", "Goal setting and milestone reminders", "Sync capabilities with health apps"],
+            "audience": "Fitness enthusiasts, personal trainers, health coaches",
+            "difficulty": "medium",
+            "buildHours": 18,
+            "saturation": "medium"
+        }
+    ]
+}
