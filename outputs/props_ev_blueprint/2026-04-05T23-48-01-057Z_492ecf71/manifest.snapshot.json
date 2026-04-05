@@ -1,0 +1,44 @@
+{
+  "productId": "props_ev_blueprint",
+  "version": "1.0.0",
+  "title": "Props EV Blueprint",
+  "tagline": "Spreadsheet-backed expected value for sports props you can trust and iterate on.",
+  "description": "A Google Sheets blueprint that helps you log props, implied probability, edge percentage, Kelly sizing, and recommendations in one place. Make your own copy, set bankroll and fair percentages, and extend rows as your card grows.",
+  "sheetUrl": "https://docs.google.com/spreadsheets/d/1Dd6JwZBdQq6x80dXZOYuGEBPNtYPVXAhvkDznQYWpvQ/edit?usp=sharing",
+  "audience": "Serious sports bettors and analysts who want transparent EV math without leaving a spreadsheet.",
+  "keyFeatures": [
+    "Structured columns for player, stat, book, line, odds, edge, implied probability, EV percent, Kelly units, and notes",
+    "Bankroll cell and fair-percent inputs so sizing stays consistent with your model",
+    "Room to add unlimited rows as you track more props across books",
+    "Clear workflow: copy the master sheet, name your version, and own your data in Drive"
+  ],
+  "brandVoice": "Direct, disciplined, and numbers-first. No hype, no hand-waving—just repeatable structure for edge tracking.",
+  "listingBullets": [
+    "Copy-ready Google Sheet layout built for props EV and bankroll-aware sizing",
+    "Columns align with how sharp bettors think: edge, implied prob, Kelly, and notes per row",
+    "Designed to scale: add players and books without breaking the model",
+    "You keep the copy; the published blueprint stays stable for everyone else",
+    "Works with your existing research—plug in lines and let the sheet organize the rest"
+  ],
+  "campaignHooks": [
+    "Show the moment you paste tonight’s lines and the sheet surfaces edge and Kelly in one view",
+    "Contrast chaotic notes with a single sheet where every prop has implied prob and EV percent",
+    "Highlight copying the master once, then customizing bankroll and fair percentages forever"
+  ],
+  "videoBeats": [
+    "Open with the problem: props notes scattered across apps and slips",
+    "Walk through making a copy, setting bankroll, and entering one full row with odds",
+    "Show implied probability and EV percent updating as edge changes",
+    "Close with owning the copy in Drive and iterating rows through the season"
+  ],
+  "photoScenes": [
+    "Laptop with the sheet open on the props tab, coffee nearby, clean desk",
+    "Phone showing a sportsbook line beside the same numbers typed into the sheet on desktop"
+  ],
+  "_factory": {
+    "runId": "2026-04-05T23-48-01-057Z_492ecf71",
+    "generatedAt": "2026-04-05T23:48:01.058Z",
+    "generator": "scripts/factory_generate.js",
+    "manifestPath": "manifests\\props_ev_blueprint.json"
+  }
+}

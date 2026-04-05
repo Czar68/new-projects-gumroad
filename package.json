@@ -9,7 +9,9 @@
     "smoke": "powershell -NoProfile -ExecutionPolicy Bypass -File ./tests/final_smoke_test.ps1",
     "loop": "powershell -NoProfile -ExecutionPolicy Bypass -File ./scripts/gumroad_loop.ps1",
     "loop:audit": "powershell -NoProfile -ExecutionPolicy Bypass -File ./scripts/gumroad_loop.ps1 -AuditOnly",
-    "loop:next": "powershell -NoProfile -ExecutionPolicy Bypass -File ./scripts/gumroad_loop.ps1 -GenerateNextOnly"
+    "loop:next": "powershell -NoProfile -ExecutionPolicy Bypass -File ./scripts/gumroad_loop.ps1 -GenerateNextOnly",
+    "factory:generate": "node ./scripts/factory_generate.js",
+    "factory:validate": "node ./tests/validate_factory_slice.js"
   },
   "keywords": ["gumroad", "spreadsheet", "automation"],
   "author": "",

@@ -1,0 +1,47 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://local/manifests/product.schema.json",
+  "title": "Factory product manifest",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["productId", "version", "title", "tagline", "description", "sheetUrl", "audience", "keyFeatures", "brandVoice", "listingBullets", "campaignHooks", "videoBeats", "photoScenes"],
+  "properties": {
+    "productId": {
+      "type": "string",
+      "const": "props_ev_blueprint",
+      "description": "Single supported product in this seam."
+    },
+    "version": { "type": "string", "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$" },
+    "title": { "type": "string", "minLength": 1 },
+    "tagline": { "type": "string", "minLength": 1 },
+    "description": { "type": "string", "minLength": 1 },
+    "sheetUrl": { "type": "string", "format": "uri" },
+    "audience": { "type": "string", "minLength": 1 },
+    "keyFeatures": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "type": "string", "minLength": 1 }
+    },
+    "brandVoice": { "type": "string", "minLength": 1 },
+    "listingBullets": {
+      "type": "array",
+      "minItems": 3,
+      "items": { "type": "string", "minLength": 1 }
+    },
+    "campaignHooks": {
+      "type": "array",
+      "minItems": 2,
+      "items": { "type": "string", "minLength": 1 }
+    },
+    "videoBeats": {
+      "type": "array",
+      "minItems": 3,
+      "items": { "type": "string", "minLength": 1 }
+    },
+    "photoScenes": {
+      "type": "array",
+      "minItems": 2,
+      "items": { "type": "string", "minLength": 1 }
+    }
+  }
+}
