@@ -13,7 +13,9 @@
     "factory:generate": "node ./scripts/factory_generate.js",
     "factory:validate": "node ./tests/validate_factory_slice.js",
     "listing:compile": "node ./scripts/compile_listing_package.js",
-    "listing:validate": "node ./tests/validate_listing_compiler_slice.js"
+    "listing:validate": "node ./tests/validate_listing_compiler_slice.js",
+    "listing:inventory": "node ./scripts/list_listing_packages.js",
+    "listing:inventory:validate": "node ./tests/validate_listing_inventory_slice.js"
   },
   "keywords": ["gumroad", "spreadsheet", "automation"],
   "author": "",
