@@ -17,7 +17,9 @@
     "listing:inventory": "node ./scripts/list_listing_packages.js",
     "listing:inventory:validate": "node ./tests/validate_listing_inventory_slice.js",
     "listing:handoff": "node ./scripts/select_handoff_run.js",
-    "listing:handoff:validate": "node ./tests/validate_handoff_selector_slice.js"
+    "listing:handoff:validate": "node ./tests/validate_handoff_selector_slice.js",
+    "listing:handoff:bundle": "node ./scripts/build_handoff_bundle.js",
+    "listing:handoff:bundle:validate": "node ./tests/validate_handoff_bundle_slice.js"
   },
   "keywords": ["gumroad", "spreadsheet", "automation"],
   "author": "",
