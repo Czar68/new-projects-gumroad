@@ -23,7 +23,9 @@
     "export:gumroad:selected-pricing-decision": "node ./scripts/export-selected-pricing-decision.js",
     "verify:gumroad:selected-pricing-decision": "node ./scripts/verify-selected-pricing-decision.js",
     "export:gumroad:publish-queue": "node ./scripts/export-publish-queue.js",
-    "verify:gumroad:publish-queue": "node ./scripts/verify-publish-queue.js"
+    "verify:gumroad:publish-queue": "node ./scripts/verify-publish-queue.js",
+    "export:gumroad:release-gate": "node ./scripts/export-release-gate.js",
+    "verify:gumroad:release-gate": "node ./scripts/verify-release-gate.js"
   },
   "keywords": ["gumroad", "spreadsheet", "automation"],
   "author": "",

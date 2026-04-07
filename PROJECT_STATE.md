@@ -15,3 +15,10 @@ Requires a prior selected handoff (`npm run listing:handoff`) and compiled listi
 - **Verify:** `npm run verify:gumroad:publish-queue` — validates shape, summary counts, ranks, band ordering, and pricing alignment when pricing artifacts exist.
 
 Requires `npm run listing:inventory` first. Runs without `pricing-decision.json` are included with recommendation `hold` and penalized in ranking versus comparable runs that have pricing artifacts.
+
+## Release gate (offline, rank 1)
+
+- **Export:** `npm run export:gumroad:release-gate` — reads `outputs/props_ev_blueprint/publish_queue.json`, then the rank-1 run’s `gumroad_listing_package.json` and `pricing-decision.json` when present, writes `outputs/props_ev_blueprint/release_gate.json`.
+- **Verify:** `npm run verify:gumroad:release-gate` — validates shape, gate status vs checks, and pricing null/integer rules.
+
+Requires `npm run export:gumroad:publish-queue` first.
