@@ -22,3 +22,10 @@ Requires `npm run listing:inventory` first. Runs without `pricing-decision.json`
 - **Verify:** `npm run verify:gumroad:release-gate` — validates shape, gate status vs checks, and pricing null/integer rules.
 
 Requires `npm run export:gumroad:publish-queue` first.
+
+## Launch plan (offline, rank 1 from release gate)
+
+- **Export:** `npm run export:gumroad:launch-plan` — reads `outputs/props_ev_blueprint/release_gate.json` and `outputs/props_ev_blueprint/publish_queue.json` (when present), loads the gated run’s `gumroad_listing_package.json` and `pricing-decision.json` when present, writes `outputs/props_ev_blueprint/launch_plan.json`.
+- **Verify:** `npm run verify:gumroad:launch-plan` — validates shape, eligibility vs `approvedForManualPublish`, pricing integers, assets, and checklist rules.
+
+Requires `npm run export:gumroad:release-gate` first (and a valid `publish_queue.json` if that file exists on disk).
