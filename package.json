@@ -27,7 +27,9 @@
     "export:gumroad:release-gate": "node ./scripts/export-release-gate.js",
     "verify:gumroad:release-gate": "node ./scripts/verify-release-gate.js",
     "export:gumroad:launch-plan": "node ./scripts/export-launch-plan.js",
-    "verify:gumroad:launch-plan": "node ./scripts/verify-launch-plan.js"
+    "verify:gumroad:launch-plan": "node ./scripts/verify-launch-plan.js",
+    "export:gumroad:post-launch-baseline": "node ./scripts/export-post-launch-baseline.js",
+    "verify:gumroad:post-launch-baseline": "node ./scripts/verify-post-launch-baseline.js"
   },
   "keywords": ["gumroad", "spreadsheet", "automation"],
   "author": "",

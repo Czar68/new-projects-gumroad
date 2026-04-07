@@ -29,3 +29,10 @@ Requires `npm run export:gumroad:publish-queue` first.
 - **Verify:** `npm run verify:gumroad:launch-plan` — validates shape, eligibility vs `approvedForManualPublish`, pricing integers, assets, and checklist rules.
 
 Requires `npm run export:gumroad:release-gate` first (and a valid `publish_queue.json` if that file exists on disk).
+
+## Post-launch baseline (offline, from launch plan)
+
+- **Export:** `npm run export:gumroad:post-launch-baseline` — reads `outputs/props_ev_blueprint/launch_plan.json` and `outputs/props_ev_blueprint/release_gate.json`, writes `outputs/props_ev_blueprint/post_launch_baseline.json`.
+- **Verify:** `npm run verify:gumroad:post-launch-baseline` — validates shape, eligibility vs `launch_plan.json`, gate alignment, baseline integers, and tracking checklist rules.
+
+Requires `npm run export:gumroad:launch-plan` and `npm run export:gumroad:release-gate` first.
