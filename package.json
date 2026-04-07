@@ -19,7 +19,9 @@
     "listing:handoff": "node ./scripts/select_handoff_run.js",
     "listing:handoff:validate": "node ./tests/validate_handoff_selector_slice.js",
     "listing:handoff:bundle": "node ./scripts/build_handoff_bundle.js",
-    "listing:handoff:bundle:validate": "node ./tests/validate_handoff_bundle_slice.js"
+    "listing:handoff:bundle:validate": "node ./tests/validate_handoff_bundle_slice.js",
+    "export:gumroad:selected-pricing-decision": "node ./scripts/export-selected-pricing-decision.js",
+    "verify:gumroad:selected-pricing-decision": "node ./scripts/verify-selected-pricing-decision.js"
   },
   "keywords": ["gumroad", "spreadsheet", "automation"],
   "author": "",
