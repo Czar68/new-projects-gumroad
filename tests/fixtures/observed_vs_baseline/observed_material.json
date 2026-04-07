@@ -1,0 +1,19 @@
+{
+  "runId": "fixture_run_1",
+  "listingKey": "fixture-listing",
+  "gumroadProductUrl": "https://example.gumroad.com/l/fixture",
+  "launchedAt": "2026-04-01T12:00:00Z",
+  "plannedTitle": "Fixture Product Title",
+  "plannedPrice": 2500,
+  "actualTitle": "Different Title",
+  "actualPrice": 2500,
+  "titleChanged": true,
+  "priceChanged": false,
+  "descriptionChanged": false,
+  "assetChanged": false,
+  "manualAdjustments": [],
+  "launchIssues": [],
+  "snapshotAt": "2026-04-02T12:00:00Z",
+  "salesCount": 1,
+  "grossRevenue": 2500
+}

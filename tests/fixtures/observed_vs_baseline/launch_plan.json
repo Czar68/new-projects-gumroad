@@ -1,0 +1,33 @@
+{
+  "eligibleForLaunchPlan": true,
+  "generatedFromReleaseGate": true,
+  "run": {
+    "rank": 1,
+    "runId": "fixture_run_1",
+    "listingSlug": "fixture-listing",
+    "recommendation": "publish_ready"
+  },
+  "gate": {
+    "status": "approved",
+    "approvedForManualPublish": true
+  },
+  "product": {
+    "title": "Fixture Product Title",
+    "summary": "Fixture summary",
+    "descriptionSource": "fixture"
+  },
+  "pricing": {
+    "currency": "USD",
+    "launchPrice": 2500,
+    "targetPrice": 2500,
+    "anchorPrice": 2500
+  },
+  "assets": {
+    "deliverableCount": 1,
+    "deliverablePaths": [],
+    "imageCount": 0,
+    "imagePaths": []
+  },
+  "manualPublishChecklist": [],
+  "blockedReasons": []
+}

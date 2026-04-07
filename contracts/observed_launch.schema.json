@@ -1,0 +1,55 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://local/contracts/observed_launch.schema.json",
+  "title": "Manually captured observed launch record (single listing)",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "runId",
+    "listingKey",
+    "gumroadProductUrl",
+    "launchedAt",
+    "plannedTitle",
+    "plannedPrice",
+    "actualTitle",
+    "actualPrice",
+    "titleChanged",
+    "priceChanged",
+    "descriptionChanged",
+    "assetChanged",
+    "manualAdjustments",
+    "launchIssues",
+    "snapshotAt",
+    "salesCount",
+    "grossRevenue"
+  ],
+  "properties": {
+    "runId": { "type": "string", "minLength": 1 },
+    "listingKey": { "type": "string", "minLength": 1 },
+    "gumroadProductUrl": { "type": "string", "minLength": 1 },
+    "launchedAt": { "type": "string", "minLength": 1 },
+    "plannedTitle": { "type": "string" },
+    "plannedPrice": { "type": "integer" },
+    "actualTitle": { "type": "string" },
+    "actualPrice": { "type": "integer" },
+    "titleChanged": { "type": "boolean" },
+    "priceChanged": { "type": "boolean" },
+    "descriptionChanged": { "type": "boolean" },
+    "assetChanged": { "type": "boolean" },
+    "manualAdjustments": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "launchIssues": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "snapshotAt": { "type": "string", "minLength": 1 },
+    "views": { "type": ["integer", "null"] },
+    "salesCount": { "type": "integer", "minimum": 0 },
+    "grossRevenue": { "type": "integer" },
+    "refundCount": { "type": ["integer", "null"], "minimum": 0 },
+    "conversionRate": { "type": ["number", "null"] },
+    "qualitativeNotes": { "type": ["string", "null"] }
+  }
+}

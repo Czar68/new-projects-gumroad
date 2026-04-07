@@ -1,0 +1,36 @@
+{
+  "generatedFromLaunchPlan": true,
+  "eligibleForTracking": true,
+  "run": {
+    "rank": 1,
+    "runId": "fixture_run_1",
+    "listingSlug": "fixture-listing",
+    "recommendation": "publish_ready"
+  },
+  "gate": {
+    "status": "approved",
+    "approvedForManualPublish": true
+  },
+  "baseline": {
+    "currency": "USD",
+    "launchPrice": 2500,
+    "targetPrice": 2500,
+    "anchorPrice": 2500,
+    "deliverableCount": 1,
+    "imageCount": 0,
+    "title": "Fixture Product Title",
+    "summary": "Fixture summary"
+  },
+  "trackingTargets": {
+    "trackListingPublished": true,
+    "trackDisplayedPrice": true,
+    "trackDisplayedTitle": true,
+    "trackDisplayedSummary": true,
+    "trackDeliverableCount": true,
+    "trackImageCount": true
+  },
+  "comparisonChecklist": [
+    "Confirm listing."
+  ],
+  "blockedReasons": []
+}
